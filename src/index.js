@@ -1,9 +1,3 @@
-function component() {
-  const element = document.createElement('div');
+const arr = [1, 2, 3, 4, 5];
 
-  element.innerHTML = 'Hello Webpack';
-
-  return element;
-}
-
-document.body.appendChild(component());
+arr.map(item => item + 1)

@@ -1,1 +1,1 @@
-document.body.appendChild(function(){const e=document.createElement("div");return e.innerHTML="Hello Webpack",e}());
+[1,2,3,4,5].map((function(n){return n+1}));
