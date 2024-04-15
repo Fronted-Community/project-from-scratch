@@ -12,6 +12,12 @@ body .main {
 .hello {
   color: red;
 }
+::-moz-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
 
 body {
   background: #00e691;

@@ -29,7 +29,16 @@ module.exports = {
           'style-loader' :
           MiniCssExtractPlugin.loader),
           'css-loader',
-          'less-loader'
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                // 添加 autoprefixer 插件
+                plugins: [require("autoprefixer")],
+              },
+            },
+          },
+          'less-loader',
         ],
       },
     ],

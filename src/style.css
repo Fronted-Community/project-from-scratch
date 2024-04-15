@@ -15,3 +15,7 @@ body .main {
 .hello {
     color: red;
 }
+
+::placeholder {
+    color: gray;
+}
