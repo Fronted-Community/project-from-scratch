@@ -1,5 +1,6 @@
 const path = require("path");
 const ESLintPlugin = require('eslint-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: "./src/index", // 配置入口文件
@@ -24,12 +25,15 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader","css-loader"],
+        use: [(process.env.NODE_ENV === 'development' ?
+          'style-loader' :
+          MiniCssExtractPlugin.loader),
+          'css-loader'],
       },
     ],
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
-  plugins: [new ESLintPlugin()]
+  plugins: [new ESLintPlugin(), new MiniCssExtractPlugin()]
 };
