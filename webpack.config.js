@@ -24,11 +24,13 @@ module.exports = {
         use: 'ts-loader'
       },
       {
-        test: /\.css$/i,
+        test: /\.(css|less)$/,
         use: [(process.env.NODE_ENV === 'development' ?
           'style-loader' :
           MiniCssExtractPlugin.loader),
-          'css-loader'],
+          'css-loader',
+          'less-loader'
+        ],
       },
     ],
   },

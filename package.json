@@ -19,6 +19,8 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-webpack-plugin": "^4.1.0",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
     "mini-css-extract-plugin": "^2.8.1",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",

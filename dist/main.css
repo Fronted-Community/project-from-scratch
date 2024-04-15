@@ -1,4 +1,27 @@
+body {
+  background: #00e691;
+  font-weight: bold;
+  padding: 12px;
+}
+body .main {
+  font-size: 24px;
+  border: 1px solid #000;
+  color: #00331a;
+  padding: 7.2px;
+}
 .hello {
-    color: red;
+  color: red;
+}
+
+body {
+  background: #00e691;
+  font-weight: bold;
+  padding: 12px;
+}
+body .main {
+  font-size: 24px;
+  border: 1px solid #000;
+  color: #00331a;
+  padding: 7.2px;
 }
 

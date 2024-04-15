@@ -1,13 +1,13 @@
 import './style.css'
+import './less-style.less'
 
-function component() {
+function component(classname: string, innerText: string ) {
   const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = 'Hello webpack';
-  element.classList.add('hello');
+  element.innerHTML = innerText;
+  element.classList.add(classname);
 
   return element;
 }
 
-document.body.appendChild(component());
+document.body.appendChild(component('hello', 'Hello webpack'));
+document.body.appendChild(component('main', 'mian element'));
