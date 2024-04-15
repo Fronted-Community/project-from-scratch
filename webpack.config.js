@@ -1,4 +1,5 @@
 const path = require("path");
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   entry: "./src/index", // 配置入口文件
@@ -18,5 +19,6 @@ module.exports = {
         }],
       },
     ],
-  }
+  },
+  plugins: [new ESLintPlugin()]
 };

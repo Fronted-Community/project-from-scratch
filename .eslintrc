@@ -1,0 +1,3 @@
+{
+  "extends": "standard" //匹配安装的 eslint-config-standard 依赖
+}
