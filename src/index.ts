@@ -1,9 +1,13 @@
-// @ts-ignore
-import { arraySum } from './helper.js'
 import './style.css'
 
-const arr = [1, 2, 3, 4, 5]
+function component() {
+  const element = document.createElement('div');
 
-arr.map(item => item + 1)
+  // Lodash, now imported by this script
+  element.innerHTML = 'Hello webpack';
+  element.classList.add('hello');
 
-arraySum(arr)
+  return element;
+}
+
+document.body.appendChild(component());
