@@ -41,10 +41,28 @@ module.exports = {
           'less-loader',
         ],
       },
+      {
+        test: /\.jsx$/,
+        loader: "babel-loader",
+        options: {
+          presets: ["@babel/preset-env", "@babel/preset-react"],
+        }
+      },
+      {
+        test: /\.tsx$/,
+        loader: 'babel-loader',
+        options: {
+          'presets': [
+            "@babel/preset-env",
+            "@babel/preset-react",
+            '@babel/preset-typescript'
+          ]
+        }
+      },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [new ESLintPlugin(), new MiniCssExtractPlugin()]
 };

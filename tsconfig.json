@@ -1,7 +1,11 @@
 // tsconfig.json
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    // TS1259: Module "/Users/yuysnsun/learn/project-from-scratch/node_modules/@types/react/index" can only be default-imported using the esModuleInterop flag
+    // index.d.ts(46, 1): This module is declared with export =, and can only be used with a default import when using the esModuleInterop flag.
     "noImplicitAny": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "jsx": "react-jsx"
   }
 }
