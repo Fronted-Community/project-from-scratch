@@ -1,5 +1,6 @@
 // @ts-ignore
 import { arraySum } from './helper.js'
+import './style.css'
 
 const arr = [1, 2, 3, 4, 5]
 

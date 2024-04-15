@@ -21,7 +21,11 @@ module.exports = {
       {
         test: /\.ts$/,
         use: 'ts-loader'
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ["css-loader"],
+      },
     ],
   },
   resolve: {
