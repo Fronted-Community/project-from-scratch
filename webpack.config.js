@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  devServer: { hot: true, open: true },
+  mode: 'development',
   entry: "./src/index", // 配置入口文件
   output: {
     filename: "[name].js", // 配置输出文件的名称
