@@ -27,6 +27,7 @@ Wrote to /Users/yuysnsun/learn/project-from-scratch/package.json:
 可以使用 nvm 控制 node 版本，特别是在多人协作过程中，可以让项目有一个稳定且统一的运行环境。
 
 1. 使用 nvm 控制 node 版本
+
 我们可以通过创建项目目录中的 .nvmrc 文件来指定要使用的 Node 版本。之后在项目目录中执行 nvm use 即可。.nvmrc 文件内容只需要遵守上文提到的语义化版本规则即可。另外还有个工具叫做 [avn](https://github.com/wbyoung/avn)，可以自动化这个过程。
 https://stackoverflow.com/questions/57110542/how-to-write-a-nvmrc-file-which-automatically-change-node-version
 
@@ -35,6 +36,7 @@ node -v > .nvmrc
 ```
 
 2. 使用 npm 控制 node 版本
+
 通过在 `package.json` 中设置 `engines` 属性来指定版本范围。
 ```json
 // 指定 node 版本的范围
