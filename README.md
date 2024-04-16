@@ -24,17 +24,39 @@ Wrote to /Users/yuysnsun/learn/project-from-scratch/package.json:
 ```
 
 ### 2 控制 node 版本
-可以使用 nvm 控制 node 版本
+可以使用 nvm 控制 node 版本，特别是在多人协作过程中，可以让项目有一个稳定且统一的运行环境。
 
-todo 控制版本的好处 ?? package.lock
-
-我们可以通过创建项目目录中的 .nvmrc 文件来指定要使用的 Node 版本。之后在项目目录中执行 nvm use 即可。.nvmrc 文件内容只需要遵守上文提到的语义化版本规则即可。另外还有个工具叫做 [avn](https://github.com/wbyoung/avn)，可以自动化这个过程。
+1. 使用 nvm 控制 node 版本
+我们可以通过创建项目目录中的 .nvmrc 文件来指定要使用的 Node 版本。之后在项目目录中执行 nvm use 即可。.nvmrc 文件内容只需要遵守上文提到的语义化版本规则即可。另外还有个工具叫做 [avn](https://github.com/wbyoung/avn)，可以自动化这个过程。
 https://stackoverflow.com/questions/57110542/how-to-write-a-nvmrc-file-which-automatically-change-node-version
 
 ```shell
 node -v > .nvmrc
 ```
 
+2. 使用 npm 控制 node 版本
+通过在 `package.json` 中设置 `engines` 属性来指定版本范围。
+```json
+// 指定 node 版本的范围
+{
+  "engines": {
+    "node": ">=14.19.1 <=17.9.0"
+  }
+}
+
+// 指定为固定版本
+{
+  "engines": {
+    "node": "~14.19.1"
+  }
+}
+```
+修改了 `engines` 配置后，使用 `yarn`和 `pnpm` 安装依赖，会在 node 版本不一致时报错，但是 `npm install` 并不会按照 `engines` 的属性来报错，这是因为在 `npm` 中设置了 `engine-strict` 的默认值为 false。
+因此，我们需要创建 .npmrc 来显式的将 `engine-strict` 定义为 true：
+```
+# .npmrc
+engine-strict=true
+```
 
 ### 3 安装 webpack
 https://webpack.js.org/guides/getting-started/#basic-setup
@@ -144,7 +166,7 @@ webpack 的编译流程
 - **后处理**：所有模块递归处理完毕后开始执行后处理，包括模块合并、注入运行时、产物优化等，最终输出 Chunk 集合；
     - `optimization`：用于控制如何优化产物包体积，内置 Dead Code Elimination、Scope Hoisting、代码混淆、代码压缩等功能
     - `target`：用于配置编译产物的目标运行环境，支持 web、node、electron 等值，不同值最终产物会有所差异
-    - `mode`：编译模式短语，支持 `development`、`production` 等值，可以理解为一种声明环境的短语
+    - `mode`：编译模式短语，支持 `development`、`production` 等值，可以理解为一种声明环境的短语
 - **输出**：将 Chunk 写出到外部文件系统；
     - `output`：配置产物输出路径、名称等；
 
