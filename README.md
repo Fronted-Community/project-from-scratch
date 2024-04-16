@@ -105,7 +105,6 @@ npm i -D eslint eslint-webpack-plugin
 # npm i -D eslint-config-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node eslint-plugin-n
 # 这些好像用不到？？eslint-plugin-promise eslint-plugin-node eslint-plugin-n
 npm i -D eslint-config-standard eslint-plugin-import
-npm i -D eslint-config-standard
 ```
 
 2. 在项目根目录添加 `.eslintrc` 配置文件，内容：
